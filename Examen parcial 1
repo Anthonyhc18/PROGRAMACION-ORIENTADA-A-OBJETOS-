@@ -1,0 +1,84 @@
+package main 
+
+import (
+	"fmt"
+)
+
+var productosvendidos[]string
+var subtotales []float64
+
+func RegistraraVenta(nombre string, precio float64, cantidad int){
+	subtotal := precio *float64(cantidad)
+
+	productosVendidos= append(productosVendidos, nombre)
+	subtotal = append(subtotales, subtotal)
+
+	fmt.Println("Venta registrada correctamente! Subtotal:", subtotal)
+
+}
+
+func MostrarEstadisticas(){
+	if len(subtotales) == 0{
+		fmt.Println("No existen ventas registradas.")
+		return
+	}
+	}
+	totalRecaudado := 0.0
+	for i := 0; i < len(subtotales); i++ {
+		totalRecaudado += subtotales[i]
+	}
+
+	fmt.Println("--- ESTADÍSTICAS ---")
+	fmt.Println("Total recaudado en el día: $", totalRecaudado)
+
+
+
+func main() {
+	var opcion int
+
+	for {
+		
+		fmt.Println("--- Menú ---")
+		fmt.Println("1. Registrar una nueva venta")
+		fmt.Println("2. Mostrar estadísticas")
+		fmt.Println("3. Salir")
+		fmt.Print("Seleccione una opción: ")
+		fmt.Scan(&opcion)
+
+		if opcion == 1 {
+			
+			fmt.Println("Productos disponibles:")
+			fmt.Println("1. Arroz - $1.25")
+			fmt.Println("2. Leche - $0.95")
+			fmt.Println("3. Pan - $0.50")
+			
+
+
+}
+var seleccion int
+			var cantidad int
+			fmt.Print("Seleccione el número del producto: ")
+			fmt.Scan(&seleccion)
+			fmt.Print("Ingrese la cantidad vendida: ")
+			fmt.Scan(&cantidad)
+if seleccion == 1 {
+				RegistrarVenta("Arroz", 1.25, cantidad)
+			} else if seleccion == 2 {
+				RegistrarVenta("Leche", 0.95, cantidad)
+			} else if seleccion == 3 {
+				RegistrarVenta("Pan", 0.50, cantidad)
+			} else {
+				fmt.Println("Número de producto inválido.")
+			}
+
+		} else if opcion == 2 {
+			MostrarEstadisticas()
+
+		} else if opcion == 3 {
+			fmt.Println("Saliendo del programa. ¡Adiós!")
+			break 
+
+		} else {
+			fmt.Println("Opción no válida. Intente de nuevo.")
+		}
+}
